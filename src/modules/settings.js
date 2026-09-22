@@ -27,6 +27,14 @@ export function renderSettingsView(container) {
         <input type="checkbox" name="soundEnabled" ${settings.soundEnabled ? 'checked' : ''} />
         Sonido al terminar una sesión
       </label>
+      <label>
+        Tema
+        <select name="theme">
+          <option value="system" ${settings.theme === 'system' ? 'selected' : ''}>Sistema</option>
+          <option value="light" ${settings.theme === 'light' ? 'selected' : ''}>Claro</option>
+          <option value="dark" ${settings.theme === 'dark' ? 'selected' : ''}>Oscuro</option>
+        </select>
+      </label>
       <button type="submit" class="btn-primary">Guardar cambios</button>
     </form>
 
@@ -45,6 +53,7 @@ export function renderSettingsView(container) {
         longBreakMin: Number(form.get('longBreakMin')) || 15,
         sessionsBeforeLongBreak: Number(form.get('sessionsBeforeLongBreak')) || 4,
         soundEnabled: form.get('soundEnabled') === 'on',
+        theme: form.get('theme') || 'system',
       },
       timer: {
         ...state.timer,

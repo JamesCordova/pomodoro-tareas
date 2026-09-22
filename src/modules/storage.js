@@ -10,6 +10,7 @@ export function defaultState() {
       longBreakMin: 15,
       sessionsBeforeLongBreak: 4,
       soundEnabled: true,
+      theme: 'system',
     },
     timer: {
       mode: 'work',
@@ -27,7 +28,8 @@ export function loadState() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return defaultState();
     const parsed = JSON.parse(raw);
-    return { ...defaultState(), ...parsed };
+    const defaults = defaultState();
+    return { ...defaults, ...parsed, settings: { ...defaults.settings, ...parsed.settings } };
   } catch {
     return defaultState();
   }
