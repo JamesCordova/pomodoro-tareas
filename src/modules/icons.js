@@ -13,6 +13,9 @@ import trees from 'lucide-static/icons/trees.svg?raw';
 import calendar from 'lucide-static/icons/calendar.svg?raw';
 import trophy from 'lucide-static/icons/trophy.svg?raw';
 import hourglass from 'lucide-static/icons/hourglass.svg?raw';
+import play from 'lucide-static/icons/play.svg?raw';
+import pause from 'lucide-static/icons/pause.svg?raw';
+import rotateCcw from 'lucide-static/icons/rotate-ccw.svg?raw';
 
 const icons = {
   timer,
@@ -30,6 +33,9 @@ const icons = {
   calendar,
   trophy,
   hourglass,
+  play,
+  pause,
+  'rotate-ccw': rotateCcw,
 };
 
 export function icon(name, className = '') {

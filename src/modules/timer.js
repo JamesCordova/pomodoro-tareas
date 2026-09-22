@@ -1,5 +1,6 @@
 import { getState, setState } from './state.js';
 import { formatTime, uid } from './utils.js';
+import { icon } from './icons.js';
 
 const MODE_LABELS = {
   work: 'Foco',
@@ -164,9 +165,9 @@ export function renderTimerView(container) {
 
       <div class="timer-controls">
         <button id="btn-start-pause" class="btn-primary btn-large">
-          ${timer.running ? '⏸ Pausar' : '▶️ Iniciar'}
+          ${timer.running ? icon('pause', 'icon icon-inline') : icon('play', 'icon icon-inline')} ${timer.running ? 'Pausar' : 'Iniciar'}
         </button>
-        <button id="btn-reset" class="btn-secondary">↺ Reiniciar</button>
+        <button id="btn-reset" class="btn-secondary">${icon('rotate-ccw', 'icon icon-inline')} Reiniciar</button>
       </div>
 
       <div class="mode-switch">
