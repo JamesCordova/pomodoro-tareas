@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#e05263" />
+    <title>Pomodoro + Tareas</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <h1>Pomodoro + Tareas</h1>
+      </header>
+
+      <main class="views">
+        <section id="view-timer" class="view" data-view="timer"></section>
+        <section id="view-tasks" class="view" data-view="tasks"></section>
+        <section id="view-stats" class="view" data-view="stats"></section>
+        <section id="view-history" class="view" data-view="history"></section>
+        <section id="view-settings" class="view" data-view="settings"></section>
+      </main>
+
+      <nav class="bottom-nav" aria-label="Navegación principal">
+        <button class="nav-btn" data-target="timer" aria-current="page">
+          <span class="nav-icon" aria-hidden="true">⏱️</span>
+          <span class="nav-label">Timer</span>
+        </button>
+        <button class="nav-btn" data-target="tasks">
+          <span class="nav-icon" aria-hidden="true">📋</span>
+          <span class="nav-label">Tareas</span>
+        </button>
+        <button class="nav-btn" data-target="stats">
+          <span class="nav-icon" aria-hidden="true">📊</span>
+          <span class="nav-label">Stats</span>
+        </button>
+        <button class="nav-btn" data-target="history">
+          <span class="nav-icon" aria-hidden="true">🕘</span>
+          <span class="nav-label">Historial</span>
+        </button>
+        <button class="nav-btn" data-target="settings">
+          <span class="nav-icon" aria-hidden="true">⚙️</span>
+          <span class="nav-label">Ajustes</span>
+        </button>
+      </nav>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
