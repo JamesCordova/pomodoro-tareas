@@ -1,5 +1,6 @@
 import { getState, setState } from './state.js';
 import { defaultState } from './storage.js';
+import { icon } from './icons.js';
 
 export function renderSettingsView(container) {
   const { settings } = getState();
@@ -68,7 +69,7 @@ export function renderSettingsView(container) {
       },
     });
     const feedback = container.querySelector('#settings-feedback');
-    feedback.textContent = 'Cambios guardados ✅';
+    feedback.innerHTML = `${icon('circle-check', 'icon icon-inline')} Cambios guardados`;
     setTimeout(() => (feedback.textContent = ''), 2000);
   });
 

@@ -1,5 +1,6 @@
 import { getState, setState } from './state.js';
 import { uid } from './utils.js';
+import { icon } from './icons.js';
 
 export function addTask(title) {
   const trimmed = title.trim();
@@ -39,15 +40,15 @@ function taskCardHTML(task, isActive) {
   return `
     <li class="task-card ${task.completed ? 'is-completed' : ''} ${isActive ? 'is-active' : ''}" data-id="${task.id}">
       <button class="task-check" data-action="toggle" aria-label="Marcar como completada">
-        ${task.completed ? '✅' : '⬜'}
+        ${task.completed ? icon('circle-check', 'icon') : icon('square', 'icon')}
       </button>
       <div class="task-body">
         <p class="task-title">${escapeHTML(task.title)}</p>
-        <p class="task-meta">🍅 ${task.pomodorosSpent} pomodoro${task.pomodorosSpent === 1 ? '' : 's'}</p>
+        <p class="task-meta">${icon('flame', 'icon icon-inline')} ${task.pomodorosSpent} pomodoro${task.pomodorosSpent === 1 ? '' : 's'}</p>
       </div>
       <div class="task-actions">
-        ${!task.completed ? `<button class="btn-icon" data-action="select" title="Usar en el timer">🎯</button>` : ''}
-        <button class="btn-icon" data-action="delete" title="Eliminar">🗑️</button>
+        ${!task.completed ? `<button class="btn-icon" data-action="select" title="Usar en el timer">${icon('target', 'icon')}</button>` : ''}
+        <button class="btn-icon" data-action="delete" title="Eliminar">${icon('trash-2', 'icon')}</button>
       </div>
     </li>
   `;

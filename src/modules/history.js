@@ -1,10 +1,11 @@
 import { getState } from './state.js';
 import { formatDateLabel, formatClock } from './utils.js';
+import { icon } from './icons.js';
 
 const TYPE_META = {
-  work: { icon: '🍅', label: 'Foco' },
-  short: { icon: '☕', label: 'Descanso corto' },
-  long: { icon: '🌿', label: 'Descanso largo' },
+  work: { icon: icon('flame', 'icon'), label: 'Foco' },
+  short: { icon: icon('coffee', 'icon'), label: 'Descanso corto' },
+  long: { icon: icon('trees', 'icon'), label: 'Descanso largo' },
 };
 
 export function renderHistoryView(container) {

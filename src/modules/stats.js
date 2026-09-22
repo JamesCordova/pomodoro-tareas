@@ -1,10 +1,11 @@
 import { getState } from './state.js';
 import { isSameDay, isSameWeek } from './utils.js';
+import { icon } from './icons.js';
 
-function statCardHTML(icon, label, value) {
+function statCardHTML(iconName, label, value) {
   return `
     <div class="stat-card">
-      <span class="stat-icon">${icon}</span>
+      <span class="stat-icon">${icon(iconName, 'icon')}</span>
       <p class="stat-value">${value}</p>
       <p class="stat-label">${label}</p>
     </div>
@@ -28,11 +29,11 @@ export function renderStatsView(container) {
   container.innerHTML = `
     <h2 class="view-title">Estadísticas</h2>
     <div class="stats-grid">
-      ${statCardHTML('🍅', 'Pomodoros hoy', todayPomodoros)}
-      ${statCardHTML('📅', 'Pomodoros esta semana', weekPomodoros)}
-      ${statCardHTML('🏆', 'Pomodoros totales', totalPomodoros)}
-      ${statCardHTML('⏳', 'Tiempo de foco total', focusLabel)}
-      ${statCardHTML('✅', 'Tareas completadas', completedTasks)}
+      ${statCardHTML('flame', 'Pomodoros hoy', todayPomodoros)}
+      ${statCardHTML('calendar', 'Pomodoros esta semana', weekPomodoros)}
+      ${statCardHTML('trophy', 'Pomodoros totales', totalPomodoros)}
+      ${statCardHTML('hourglass', 'Tiempo de foco total', focusLabel)}
+      ${statCardHTML('circle-check', 'Tareas completadas', completedTasks)}
     </div>
     ${
       totalPomodoros === 0

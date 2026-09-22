@@ -42,6 +42,18 @@
   box-sizing: border-box;
 }
 
+.icon {
+  width: 1.25em;
+  height: 1.25em;
+  flex-shrink: 0;
+  vertical-align: -0.2em;
+}
+
+.icon-inline {
+  width: 1em;
+  height: 1em;
+}
+
 body {
   margin: 0;
   background: var(--color-bg);
@@ -154,7 +166,12 @@ button {
 }
 
 .nav-icon {
-  font-size: 1.25rem;
+  display: flex;
+}
+
+.nav-icon .icon {
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
 .nav-label {
@@ -207,7 +224,8 @@ button {
 .btn-icon {
   border: none;
   background: none;
-  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
   padding: 4px;
 }
@@ -351,7 +369,8 @@ button {
 .task-check {
   border: none;
   background: none;
-  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -399,7 +418,14 @@ button {
 }
 
 .stat-icon {
-  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.stat-icon .icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .stat-value {
@@ -436,7 +462,8 @@ button {
 }
 
 .history-icon {
-  font-size: 1.2rem;
+  display: flex;
+  color: var(--color-primary);
 }
 
 .history-body {
