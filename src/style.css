@@ -26,11 +26,16 @@
 }
 
 :root[data-theme='dark'] {
+  color-scheme: dark;
   --color-bg: #171512;
   --color-surface: #221f1b;
   --color-text: #f2ede6;
   --color-text-muted: #a89f92;
   --color-border: #35302a;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
 }
 
 * {
